@@ -1,0 +1,8 @@
+#!/usr/bin/python3
+import os
+ 
+db_user = os.environ.get(db_user)
+db_password = os.environ.get(db_password)
+
+print(db_user)
+print(db_password)
