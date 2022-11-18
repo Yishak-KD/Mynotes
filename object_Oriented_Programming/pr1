@@ -1,0 +1,14 @@
+#!/usr/bin/python3
+"""Introduction to OOP in Python """
+
+class Car:
+    def __init__(self, name, model, mileage):
+        self.name = name
+        self.model = model
+        self.mileage = mileage
+
+    def __str__(self):
+        return f"The name of the car is {self.name} with model {self.model} and the mileage is {self.mileage}"
+
+a = Car("BMW", 2020, 20000)
+print(a.__str__())
