@@ -2,13 +2,27 @@
 """Introduction to OOP in Python """
 
 class Car:
-    def __init__(self, name, model, mileage):
+    def __init__(self, name, model):
         self.name = name
         self.model = model
-        self.mileage = mileage
 
-    def __str__(self):
-        return f"The name of the car is {self.name} with model {self.model} and the mileage is {self.mileage}"
+    @property
+    def nameCar(self):
+        return self.name
 
-a = Car("BMW", 2020, 20000)
-print(a.__str__())
+    @nameCar.setter
+    def nameCar(self, x):
+        self.name = x
+
+    @property
+    def modelCar(self):
+        return self.model
+
+    @modelCar.setter
+    def modelCar(self, y):
+        self.model = y
+
+a = Car('BMW', 2020)
+print(a.name)
+a.name = "Toyota"
+print(a.name)
