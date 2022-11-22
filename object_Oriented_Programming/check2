@@ -1,8 +1,0 @@
-#!/usr/bin/python3
-"""Error handling and checking types"""
-
-a = "Hello"
-if isinstance(a, int):
-	print(f"{a} is type int")
-else:
-	print(f"{a} is not type int")
