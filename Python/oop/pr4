@@ -1,0 +1,11 @@
+#!/usr/bin/python3
+"""Inheritance"""
+from oop.pr1 import Car
+
+class Plane(Car):
+    def __init__(self, country):
+        self.country = country
+        super().__init__(name, brand)
+
+plane1 = Plane("Ethiopia")
+print(plane1.country)

@@ -1,0 +1,28 @@
+#!/usr/bin/python3
+"""Introduction to OOP in Python """
+
+class Car:
+    def __init__(self, name, model):
+        self.name = name
+        self.model = model
+
+    @property
+    def nameCar(self):
+        return self.name
+
+    @nameCar.setter
+    def nameCar(self, x):
+        self.name = x
+
+    @property
+    def modelCar(self):
+        return self.model
+
+    @modelCar.setter
+    def modelCar(self, y):
+        self.model = y
+
+a = Car('BMW', 2020)
+print(a.name)
+a.name = "Toyota"
+print(a.name)
