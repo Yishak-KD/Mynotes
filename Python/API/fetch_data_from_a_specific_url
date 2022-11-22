@@ -1,0 +1,22 @@
+#!/usr/bin/python3
+
+import requests
+import sys
+
+response = requests.get(
+    'https://jsonplaceholder.typicode.com/users/{}'.format(sys.argv[1])).json()
+
+print(response.get("id"))
+print(response.get("name"))
+print(response.get("username"))
+print(response.get("email"))
+print(response.get("address")["street"])
+print(response.get("address")["suite"])
+print(response.get("address")["city"])
+print(response.get("address")["zipcode"])
+print(response.get("address")["geo"]["lat"])
+print(response.get("phone"))
+print(response.get("website"))
+print(response.get("company")["name"])
+print(response.get("company")["catchPhrase"])
+print(response.get("company")["bs"])
