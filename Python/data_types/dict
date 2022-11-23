@@ -1,0 +1,6 @@
+#!/usr/bin/python3
+"""Dictionary"""
+
+dict = {'key1':'geeks', 'key2':'for'}
+dict['key1'] = 'sololearn'
+print(dict)
