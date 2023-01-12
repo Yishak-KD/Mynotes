@@ -41,8 +41,8 @@ const obj = {
     ]
 }
 
-console.log(obj.squadName);
-console.log(obj.members[0]);
-console.log(obj.members[0].name);
-console.log(obj.members[0].powers)
-console.log(obj.members[0].powers[1])
+console.log(obj.squadName);  // console.log(obj['squadName']);
+console.log(obj.members[0]);  // console.log(obj['members'][0]);
+console.log(obj.members[0].name);  // console.log(obj['members'][0]['name']);
+console.log(obj.members[0].powers);  // console.log(obj['members'][0]['powers'])
+console.log(obj.members[0].powers[1]);  // console.log(obj['members'][0]['powers'][1])  
