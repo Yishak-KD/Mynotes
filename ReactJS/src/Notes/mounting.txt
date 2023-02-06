@@ -1,0 +1,34 @@
+The code below is an example regarding lifecycles of a component in react.
+
+import './App.css';
+import React from 'react';
+
+class App extends React.Component {
+  constructor(props) {
+    super(props)
+
+    this.state = {
+      name: "Yishak"
+    }
+    console.log("Constructor")
+  }
+
+  // Component did mount
+  componentDidMount() {
+    console.log("Component Did mount")
+  }
+
+  // Component updating using static get derived...
+  static getDerivedStateFromProps(props, state) {
+    console.log("Updating")
+    return { name: props.name }
+  }
+  render() {
+    console.log("Render")
+    return (
+      <div>Hello my name is {this.state.name}</div>
+    )
+  }
+}
+
+export default App;

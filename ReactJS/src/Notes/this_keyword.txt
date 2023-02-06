@@ -1,0 +1,32 @@
+Importance of this keyword when handling an event in react
+
+import './App.css';
+import React from 'react';
+
+class App extends React.Component {
+  constructor(props) {
+    super(props)
+
+    this.state = {
+      name: "Yishak"
+    }
+
+    this.handleClick = this.handleClick.bind(this);
+  }
+
+  handleClick(e) {
+    this.setState({
+      name: "Kidanu"
+    })
+  }
+  render() {
+    return (
+      <div>
+        <h1>{this.state.name}</h1>
+        <button type='button' onClick={this.handleClick}>Click</button>
+      </div>
+    )
+  }
+}
+
+export default App;
