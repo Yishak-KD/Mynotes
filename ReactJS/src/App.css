@@ -1,6 +1,4 @@
-h1 {
+div {
     text-align: center;
-    color: red;
-    font-weight: bolder;
-    font-size: xx-large;
+    padding: 10px;
 }
