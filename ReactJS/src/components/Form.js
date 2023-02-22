@@ -24,14 +24,14 @@ function Form() {
             <form onSubmit={handleSubmit}>
                 {/* Name Tag */}
                 <label>Name:</label>
-                <input type={'text'} name={'Name'} value={formState.name} onChange={handleInputChange} />
+                <input type={'text'} name={'Name'} defaultValue={formState.name} onChange={handleInputChange} />
                 <br />
                 {/* Email Tag */}
                 <label>Email:</label>
-                <input type={'email'} name={'Email'} value={formState.email} onChange={handleInputChange} />
+                <input type={'email'} name={'Email'} defaultValue={formState.email} onChange={handleInputChange} />
                 <br />
                 <label>Message:</label>
-                <input type={'text'} name={'Message'} value={formState.message} onChange={handleInputChange} />
+                <input type={'text'} name={'Message'} defaultValue={formState.message} onChange={handleInputChange} />
                 <br />
                 <button>Submit</button>
 
