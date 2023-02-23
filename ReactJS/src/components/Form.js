@@ -39,7 +39,7 @@ function Form() {
                 <br />
                 {/* Message Tag */}
                 <label>Message:
-                    <input type={'text'} name={'Message'} value={formState.message} onChange={handleInputChange} />
+                    <textarea name='Message' rows={'4'} cols={'50'} value={formState.message} onChange={handleInputChange}></textarea>
                 </label>
                 <br />
                 <button>Submit</button>
