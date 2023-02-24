@@ -30,3 +30,7 @@ const obj2 = { city: 'john', country: 'USA' }
 const obj3 = { ...obj1, ...obj2 }
 
 console.log(obj3)
+
+// In each of these examples, the spread operator is used to extract the individual values from the array or object and spread them out into a new array or object.
+
+// The spread operator can be used with any iterable object, including arrays, strings, and sets. However, it cannot be used with objects that are not iterable.
