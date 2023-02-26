@@ -45,4 +45,4 @@ console.log(age5)
 
 // In this example, the object person is destructured, and the nested object address is also destructured into variables city and country.
 
-// Destructuring is a powerful feature in JavaScript that can simplify code and make it easier to read and understand. It can be used in various contexts, such as function parameters, return values, and assignments, and can greatly improve the readability and maintainability of your code.
+// Destructuring is a powerful feature in JavaScript that can simplify code and make it easier to read and understand. It can be used in various contexts, such as function parameters, return values, and assignments, and can greatly improve the readability and maintainability of our code.
