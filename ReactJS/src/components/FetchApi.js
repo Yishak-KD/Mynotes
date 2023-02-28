@@ -4,13 +4,18 @@ import axios from 'axios';
 function FetchApi() {
     const [data, setData] = useState(null)
 
-    useEffect(() => {
-        const fetchData = async (id) => {
+    const fetchData = async (id) => {
+        try {
             const response = await axios.get(`https://jsonplaceholder.typicode.com/users/${id}`);
             const json_data = await response.data;
             setData(json_data.name)
+        } catch (error) {
+            console.log(error)
         }
-        fetchData(2)
+    }
+
+    useEffect(() => {
+        fetchData(4)
     }, [])
     return (
         <div>
@@ -20,5 +25,3 @@ function FetchApi() {
 }
 
 export default FetchApi
-
-
