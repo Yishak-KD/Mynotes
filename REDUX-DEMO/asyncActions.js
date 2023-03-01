@@ -1,4 +1,7 @@
 const createStore = require('redux').createStore;
+const applyMiddleware = require('redux').applyMiddleware;
+const thunkMiddleware = require('redux-thunk').default;
+const axios = require('axios');
 
 // Define an initial state value
 const initialState = {
@@ -59,6 +62,22 @@ const reducer = (state = initialState, action) => {
     }
 }
 
+const fetchUsers = () => {
+    return function (dispatch) {
+        dispatch(fetchUserRequest())
+        axios.get('https://jsonplaceholde.typicode.com/users')
+            .then(response => {
+                // response data is the array of users
+                const users = response.data.map(user => user.name)
+                dispatch(fetchUserSuccess(users))
+            })
+            .catch(error => {
+                dispatch(fetchUserError(error.message))
+            })
+    }
+}
 
 // Create store
-const store = createStore(reducer);
+const store = createStore(reducer, applyMiddleware(thunkMiddleware));
+store.subscribe(() => { console.log(store.getState()) })
+store.dispatch(fetchUsers())
