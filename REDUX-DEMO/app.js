@@ -1,5 +1,7 @@
 const createStore = require('redux').createStore;
 const combineReducers = require('redux').combineReducers;
+const logger = require('redux-logger').createLogger();
+const applyMiddleware = require('redux').applyMiddleware
 
 // Define initial state for burger
 const burgerState = {
@@ -49,13 +51,14 @@ function pizzaReducer(state = pizzaState, action) {
     }
 }
 
+// Create a root reducer
+const rootReducer = combineReducers({
+    burger: burgerReducer,
+    pizza: pizzaReducer
+})
+
 // Create a store
-const store = createStore(
-    combineReducers({
-        burger: burgerReducer,
-        pizza: pizzaReducer
-    })
-)
+const store = createStore(rootReducer, applyMiddleware(logger))
 
 // Subscribe to state changes
 store.subscribe(() => console.log(store.getState()))
