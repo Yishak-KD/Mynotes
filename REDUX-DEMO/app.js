@@ -1,47 +1,49 @@
 const createStore = require('redux').createStore;
 const combineReducers = require('redux').combineReducers;
 
-// Define initial state
-const countState = {
-    count: 0,
+// Define initial state for burger
+const burgerState = {
+    burger: 10,
 }
 
-const decoState = {
-    deco: 20
+// Define initial state for pizza
+const pizzaState = {
+    pizza: 20
 }
 
 // Define an action type
-const INCREMENT = 'INCREMENT'
-const DECREMENT = 'DECREMENT'
+const BUY_BURGER = 'BUY_CAKE'
+const BUY_PIZZA = 'BUY_PIZZA'
 
-// Define an action creator
-function increment() {
+// Define an action creator for a Burger
+function burgerAction() {
     return {
-        type: INCREMENT
+        type: BUY_BURGER
     }
 }
 
-function decrement() {
+// Define an action for a pizza
+function pizzaAction() {
     return {
-        type: DECREMENT
+        type: BUY_PIZZA
     }
 }
 
-// Define an Icrement Reducer
-function incrementReducer(state = countState, action) {
+// Define a Burger reducer
+function burgerReducer(state = burgerState, action) {
     switch (action.type) {
-        case INCREMENT:
-            return { ...state, count: state.count + 1 }
+        case BUY_BURGER:
+            return { ...state, burger: state.burger - 1 }
         default:
             return state
     }
 }
 
-// Define a Decrement Reducer
-function decrementReducer(state = decoState, action) {
+// Define a Pizza Reducer
+function pizzaReducer(state = pizzaState, action) {
     switch (action.type) {
-        case DECREMENT:
-            return { ...state, deco: state.deco - 1 }
+        case BUY_PIZZA:
+            return { ...state, pizza: state.pizza - 1 }
         default:
             return state
     }
@@ -50,8 +52,8 @@ function decrementReducer(state = decoState, action) {
 // Create a store
 const store = createStore(
     combineReducers({
-        increment: incrementReducer,
-        decrement: decrementReducer
+        burger: burgerReducer,
+        pizza: pizzaReducer
     })
 )
 
@@ -59,11 +61,10 @@ const store = createStore(
 store.subscribe(() => console.log(store.getState()))
 
 // Dispatch an action
-store.dispatch(increment()) // {Count: 1}
-store.dispatch(increment()) // {Count: 2}
-store.dispatch(increment()) // {Count: 3}
-store.dispatch(increment()) // {Count: 4}
-store.dispatch(increment()) // {Count: 5}
-store.dispatch(decrement()) // {Count: 4}
-store.dispatch(decrement()) // {Count: 3}
-store.dispatch(decrement()) // {Count: 2}
+store.dispatch(burgerAction()) // {Count: 1}
+store.dispatch(burgerAction()) // {Count: 2}
+store.dispatch(burgerAction()) // {Count: 3}
+store.dispatch(pizzaAction()) // {Count: 4}
+store.dispatch(pizzaAction()) // {Count: 5}
+store.dispatch(pizzaAction()) // {Count: 4}
+store.dispatch(pizzaAction()) // {Count: 2}
