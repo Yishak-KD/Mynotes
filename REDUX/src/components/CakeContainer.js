@@ -13,6 +13,7 @@ function CakeContainer(props) {
     )
 }
 
+// Using the mapStateToProps and mapDispatchToProps
 const mapStateToProps = state => {
     return {
         numOfCakes: state.numOfCakes
