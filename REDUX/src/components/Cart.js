@@ -1,6 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import CartItem from './CartItem';
+// Cart Component
 
 function Cart({ cart, total, removeFromCart }) {
     return (
