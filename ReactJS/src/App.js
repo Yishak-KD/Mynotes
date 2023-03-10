@@ -20,7 +20,6 @@ function App() {
       {/* <Refs /> */}
       {/* <Form /> */}
       {/* <FetchApi /> */}
-      {/* <UserProfile /> */}
       <Router>
         <Switch>
           <Route exact path="/home" component={Counter} />
