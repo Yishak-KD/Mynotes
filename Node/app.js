@@ -21,7 +21,7 @@ app.get('/about-us', (req, res) => {
     res.redirect('./about')
 })
 
-// 404 Pages
+// 404 Pages --- This app.use also acts as a middleware
 app.use((req, res) => {
     res.sendFile('./pages/404.html', { root: __dirname })
 })
