@@ -8,7 +8,7 @@ function Form() {
         message: ''
     });
 
-    const handleInputChange = (event) => {
+    const handleInputChange = event => {
         // const { name, value } = event.target;
         const value = event.target.value;
         setFormState({
@@ -28,22 +28,21 @@ function Form() {
             <form onSubmit={handleSubmit}>
                 {/* Name Tag */}
                 <label>Name:
-                    <input type={'text'} name={'Name'} value={formState.name} onChange={handleInputChange} />
+                    <input className={css(styles.input)} type={'text'} name={'name'} value={formState.name} onChange={handleInputChange} />
                 </label>
 
                 <br />
                 {/* Email Tag */}
                 <label>Email:
-                    <input type={'email'} name={'Email'} value={formState.email} onChange={handleInputChange} />
+                    <input className={css(styles.input)} type={'email'} name={'email'} value={formState.email} onChange={handleInputChange} />
                 </label>
                 <br />
                 {/* Message Tag */}
                 <label>Message:
-                    <textarea name='Message' rows={'4'} cols={'50'} value={formState.message} onChange={handleInputChange}></textarea>
+                    <textarea className={css(styles.input)} name='message' rows={'4'} cols={'50'} value={formState.message} onChange={handleInputChange}></textarea>
                 </label>
                 <br />
-                <button>Submit</button>
-
+                <button className={css(styles.btn)}>Submit</button>
             </form>
         </>
     )
@@ -53,6 +52,14 @@ const styles = StyleSheet.create({
     h1: {
         color: "red",
         textAlign: 'center'
+    },
+    input: {
+        border: '1px solid black'
+    },
+    btn: {
+        color: 'white',
+        backgroundColor: 'black',
+        padding: '10px'
     }
 })
 
